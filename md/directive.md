@@ -112,6 +112,50 @@ app.controller('myCtrl', function($scope) {
 </div>
 ```
 
+* $index（遍历索引）、$first（遍历首）、$last（遍历末尾）、$middle（除却首次和最后一次遍历）、$odd（奇数）、$even（偶数）
+```html
+<body ng-app="myApp" ng-controller="demoCtrl">
+	<ul>
+		<li ng-repeat="item in arr" class="{{ $first ? 'first' : '' }}">
+			{{ item }}
+			<p>当前循环的索引是 {{ $index }}</p>
+			<p>当前是否是第一次循环 {{ $first }}</p>
+			<p>当前是否是最后一次循环 {{ $last }}</p>
+			<p>当前是否是中间项 {{ $middle }}</p>
+			<p>当前是否是奇数项 {{ $odd }}</p>
+			<p>当前是否是偶数项 {{ $even }}</p>
+		</li>
+	</ul>
+
+	<script src="node_modules/angular/angular.js"></script>
+	<script>
+		angular.module('myApp',[])
+		.controller('demoCtrl',['$scope',function($scope){
+			$scope.arr = ['a','b','c','d','f'];
+
+		}])
+	</script>
+</body>
+```
+
+* 当使用`ng-repeat`遍历数组时，若数组中存在相等的项，angular就会报错，这时需要使用`track by $index` 
+
+```html
+<body ng-app="myApp" ng-controller="demoCtrl">
+	<ul>
+		<li ng-repeat="item in arr track by $index"> {{ item }} </li>
+	</ul>
+	<script src="node_modules/angular/angular.js"></script>
+	<script>
+		angular.module('myApp',[])
+			.controller('demoCtrl',['$scope',function($scope){
+				$scope.arr = ['a','b','c','a','b'];
+			}])
+
+	</script>
+</body>
+```
+
 ### 7. ng-show
 
 ```html

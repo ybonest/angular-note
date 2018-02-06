@@ -16,7 +16,7 @@ app.controller("myCtrl",function($scope){
 
 ```javascript
 const app = angular.module("myApp",[]);
-app.controller("myCtrl",["$scope",function($scope){}])
+app.controller("myCtrl",["$scope","$http",function($scope,$http){}])
 ```
 
 #### 控制器嵌套
