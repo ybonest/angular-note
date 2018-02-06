@@ -1,4 +1,25 @@
-#### 二、控制器嵌套
+#### 创建控制器
+```html
+<div ng-app="myApp" ng-controller="myCtrl">
+</div>
+```
+
+```javascript
+const app = angular.module("myApp",[]);
+app.controller("myCtrl",function($scope){
+  $scope.binary = "";
+})
+```
+
+#### 以安全的方式创建控制器
+当angular项目中的js文件被压缩时，有时候$scope会被更简短的单词代替，所以建议使用安全模式定义控制器
+
+```javascript
+const app = angular.module("myApp",[]);
+app.controller("myCtrl",["$scope",function($scope){}])
+```
+
+#### 控制器嵌套
 
 - AngularJS应用的任何一个部分，无论它渲染在那个上下文中，都有父级作用域。对于ng-app所处的层级来讲，它的父级作用域就是$rootScope
 

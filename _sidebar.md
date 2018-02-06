@@ -1,5 +1,5 @@
 - [常用指令](/md/directive.md)
-- [控制器嵌套](/md/controller.md)
+- [控制器](/md/controller.md)
 - [scope作用域](/md/scope.md)
 - [AngularJS服务](/md/service.md)
 - [AngularJS XMLHttpRequest](/md/XMLHttpRequest.md)

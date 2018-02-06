@@ -317,12 +317,20 @@ app.controller('myCtrl', function($scope) {
   <button ng-click="count = count + 1" ng-init="count=0">OK</button>
   ```
 
-### 24. ng-cloak
+### 24. ng-cloak(解决加载{{}}闪烁)
 
-* 在应用正要加载时防止其闪烁
+* 当将angular.js文件引入放到body之后时，由于加载顺序原因，当html加载到有花括号的地方时，因为angular尚未加载，因此不能识别{{}}，所以会导致闪烁问题，使用`ng-cloak`可以解决闪烁
 
-  ```html
-  <div ng-app="">
-  <p ng-cloak>{{ 5 + 5 }}</p>
-  </div>
-  ```
+```html
+<div ng-app="">
+<p ng-cloak>{{ 5 + 5 }}</p>
+</div>
+```
+在样式文件中加入如下代码
+```css
+[ng-cloak]{
+  display:none;
+}
+```
+
++ 除却使用ng-cloak外，还可以使用``ng-bind``或`ng-bind-template`来代替插值表达式`{{}}`从而解决闪烁问题
