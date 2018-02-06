@@ -1,0 +1,5 @@
+url: https://ybonest.github.io/es6-note
+root: /
+include: [_coverpage.md, _sidebar.md]
+
+theme: jekyll-theme-cayman
