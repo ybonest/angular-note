@@ -1,6 +1,5 @@
 - [常用指令](/md/directive.md)
 - [控制器嵌套](/md/controller.md)
-- [过滤器](/md/fileter.md)
 - [scope作用域](/md/scope.md)
 - [AngularJS服务](/md/service.md)
 - [AngularJS XMLHttpRequest](/md/XMLHttpRequest.md)
